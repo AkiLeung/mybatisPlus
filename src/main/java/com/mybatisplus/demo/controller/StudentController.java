@@ -62,6 +62,12 @@ public class StudentController {
     }
 
     @ResponseBody
+    @RequestMapping("/selectCount")
+    public int selectCount() {
+        return service.selectCount();
+    }
+
+    @ResponseBody
     @RequestMapping("/listCount")
     public int listCount() {
         return service.listCount();

@@ -1,11 +1,11 @@
 package com.mybatisplus.demo.service;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.mybatisplus.demo.entity.Student;
 import com.mybatisplus.demo.mapper.IStudentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 import java.util.List;
 
@@ -43,8 +43,16 @@ public class StudentService {
     /**
      * 调用自定义方法
      */
+    public Integer selectCount() {
+        EntityWrapper<Student> qryWrapper = new EntityWrapper<>();
+        qryWrapper.where("  1=1");
+        return mapper.selectCount(qryWrapper);
+    }
+
+    /**
+     * 调用自定义方法
+     */
     public int listCount() {
         return mapper.listCount();
     }
-
 }
