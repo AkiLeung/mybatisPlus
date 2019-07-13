@@ -3,9 +3,7 @@ package com.mybatisplus.demo.controller;
 import com.mybatisplus.demo.entity.Student;
 import com.mybatisplus.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,7 +12,7 @@ import java.util.List;
  * @date
  * @description
  */
-@Controller
+@RestController
 @RequestMapping("/student")
 public class StudentController {
 
@@ -49,8 +47,8 @@ public class StudentController {
     }
 
     @ResponseBody
-    @RequestMapping("/get")
-    public Student get(int id) {
+    @RequestMapping("/get1/{id}")
+    public Student get1(@PathVariable("id") int id) {
         return service.get(id);
     }
 

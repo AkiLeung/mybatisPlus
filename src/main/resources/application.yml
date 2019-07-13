@@ -43,4 +43,4 @@ mybatis-plus:
     #是否动态刷新mapper
     refresh-mapper: false
     #数据库大写命名下划线转换
-    #capital-mode: true
+    apital-mode: true
