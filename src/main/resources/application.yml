@@ -1,5 +1,7 @@
 server:
   port: 8080
+  servlet:
+    context-path: /myTest
 
 #设置提供的服务名
 spring:
