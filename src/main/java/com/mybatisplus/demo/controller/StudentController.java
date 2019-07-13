@@ -4,8 +4,13 @@ import com.mybatisplus.demo.entity.Student;
 import com.mybatisplus.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.resource.HttpResource;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Joseph.L
@@ -69,5 +74,18 @@ public class StudentController {
     @RequestMapping("/listCount")
     public int listCount() {
         return service.listCount();
+    }
+
+
+    @ResponseBody
+    @RequestMapping("/login")
+    public String login(HttpServletResponse response) throws Exception {
+        String str="OK";
+        String username = "Name:test123";
+        String password = "Password:test123";
+        Cookie c1 = new Cookie("loginName", username);
+        c1.setPath("/");
+        response.addCookie(c1);
+        return str;
     }
 }
