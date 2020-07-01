@@ -42,7 +42,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.9</version>
+            <version>8.0.16</version>
         </dependency>
         <!--import mybatis plus 它会自动引入mybatis及mybatis spring切勿重复引用以免冲突-->
         <dependency>
